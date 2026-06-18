@@ -30,7 +30,7 @@ out = cv2.VideoWriter(output_video_path, cv2.VideoWriter_fourcc(*'XVID'), fps, (
 
 # Initialize SIFT feature detector and compute reference descriptors
 # Using the object_mask ensures features are only extracted from the book itself
-sift = cv2.SIFT_create(nfeatures=5000, contrastThreshold=0.02, edgeThreshold=10)
+sift = cv2.SIFT_create(nfeatures=5000, contrastThreshold=0.06, edgeThreshold=10)
 keypoints_ref, descriptors_ref = sift.detectAndCompute(reference_frame, mask=object_mask)
 
 # Initialize Brute Force Matcher with L2 norm and cross-check enabled for accuracy
